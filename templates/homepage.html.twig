@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+  Homepage
+{% endblock %}
+
+{% block body%}
+  <h1>Welcome to Symfony Url Shortener</h1>
+  {{form_start(LinkForm)}}
+    <p>Enter URL to shorten</p>
+    {{form_widget(LinkForm.original_link, {'label':false})}}
+    <p>Enter short URL to look up information</p>
+    {{form_widget(LinkForm.view)}}
+    <p>Enter short URL to redirect</p>
+    {{form_widget(LinkForm.redirect)}}
+   <button type="submit">Submit!</button>
+  {{form_end(LinkForm)}}
+{% endblock%}
